@@ -1,0 +1,38 @@
+.formulario {
+    background-color: var(--branco);
+    /* border: 1px solid; */
+    border-radius: 30px;
+    box-shadow: 0 0 10px var(--branco);
+
+    width: 90%;
+    min-height: 70%;
+
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+hr {
+    width: 90%;
+}
+
+.form-titulo b {
+    color: rgb(97, 88, 88);
+}
+
+.form-titulo {
+    padding: 10px;
+    padding-left: 20px;
+}
+
+
+@media (max-width:412px) {
+
+    .formulario input {
+        font-size: 13px;
+    }
+
+
+}

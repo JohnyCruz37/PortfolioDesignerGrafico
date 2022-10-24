@@ -1,0 +1,23 @@
+.nivel{
+    /* border: 1px solid; */
+    width: 80%;
+    height: auto;
+
+    display: flex;
+
+}
+
+.nivel legend{
+    width: 50%;
+    margin: auto;
+}
+.nivel .form-check-label{
+    /* border: 1px solid; */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+

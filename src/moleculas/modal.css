@@ -1,0 +1,135 @@
+/* configuração para todo os modais parte externa */
+
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.539);
+    position: fixed;
+    top: 0%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.body-modal {
+    background-color: var(--vdopaco);
+    width: 80vw;
+    height: 40vw;
+}
+
+
+.modal-criar,
+.modal-entrar,
+.modal-postarTrabalho {
+    background-color: transparent;
+    position: fixed;
+
+}
+
+/* botão fechar */
+.modal-criar .fechar-modal,
+.modal-entrar .fechar-modal,
+.modal-post .fechar-modal,
+.modal-postarTrabalho .fechar-modal {
+    position: absolute;
+}
+
+
+/* ENTRAR */
+.modal-entrar {
+    width: 80vw;
+    max-width: 1000px;
+    height: auto;
+
+}
+
+.modal-entrar .fechar-modal {
+    top: 23%;
+    right: 15%
+}
+
+
+/* CRIAR */
+.modal-criar {
+    width: 80vw;
+    height: auto;
+
+    margin-top: 9vh;
+    margin-left: 11vh;
+
+}
+
+.modal-criar .fechar-modal {
+    top: 11.5%;
+    right: 15%;
+}
+
+
+/* moda postar trabalho */
+.modal-postarTrabalho {
+    position: fixed;
+    top: 12%;
+    left: 25% 25%;
+}
+
+
+.modal-postarTrabalho .fechar-modal {
+    top: 15%;
+    right: 5%;
+
+}
+
+
+/* modal das postagens */
+.modal-post {
+    position: fixed;
+    top: 12%;
+}
+
+
+.modal-post .fechar-modal {
+    top: 3%;
+    left: 2%;
+
+}
+
+
+
+
+
+
+
+
+@media (max-width:412px) {
+
+    /* ENTRAR */
+    .modal-entrar {
+        width: 90vw;
+        margin-left: 30px;
+    }
+
+    /* CRIAR */
+    .modal-criar {
+        width: 90vw;
+        height: auto;
+
+        margin-top: 5vh;
+        margin-left: 4vh;
+
+    }
+
+    .modal-criar .fechar-modal {
+        top: 10%;
+    }
+
+    /* moda postar trabalho */
+    .modal-postarTrabalho {
+        position: fixed;
+        top: 12%;
+        left: 25% 25%;
+    }
+
+}

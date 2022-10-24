@@ -1,0 +1,17 @@
+.titulo{
+    background-color: var(--vdopaco);
+    /* border: 1px solid ; */
+    border-bottom: 3px solid var(--branco);
+    width: 100%;
+    height: auto;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo h2{
+    color: var(--branco);
+    text-align: center;
+    text-transform: uppercase;
+}

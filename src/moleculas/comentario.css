@@ -1,0 +1,17 @@
+.comentario {
+    /* border: 1px solid red; */
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+    padding: 5px;
+}
+
+.comentario-perfil {
+    background-color: var(--vdopaco)
+}
+
+.comentario .comentario-texto {
+    border-radius: 0 0 10px 10px;
+    background-color: #ccc;
+    padding: 3px 5px;
+}

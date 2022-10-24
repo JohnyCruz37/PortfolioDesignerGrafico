@@ -1,0 +1,49 @@
+.bio {
+    background-color: var(--branco);
+
+    width: 70vw;
+    height: auto;
+
+    position: relative;
+}
+
+.bio textarea {
+    width: 100%;
+}
+
+.editar-textarea {
+    font-size: 2rem;
+}
+
+.editar-textarea,
+.editar-textarea-salvar {
+    position: absolute;
+    right: 20px;
+    bottom: 5px;
+
+    transition: .3s;
+}
+
+.editar-textarea:hover {
+    transition: .3s;
+    transform: scale(1.2);
+
+    cursor: pointer;
+}
+
+.bio textarea:disabled {
+    color: rgb(151, 146, 146);
+}
+
+@media (max-width:412px) {
+    .bio {
+        width: 80vw;
+        height: auto;
+
+        position: relative;
+    }
+
+    .bio textarea {
+        width: 100%;
+    }
+}

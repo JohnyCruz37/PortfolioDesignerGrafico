@@ -1,0 +1,27 @@
+.perfil-contato{
+    grid-area: 2 / 1 / 3 / 3;
+    height: auto;
+}
+
+.redes{
+    background-color: var(--vdopaco);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.redes .icone-rede{
+    font-size: 2rem;
+    margin: 10px 0;
+
+    transition: all .3s;
+}
+
+.redes .icone-rede:hover{
+    transform: scale(1.3);
+
+    transition: .3s;
+}
+

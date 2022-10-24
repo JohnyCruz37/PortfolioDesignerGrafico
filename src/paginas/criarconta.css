@@ -1,0 +1,77 @@
+.form-criar {
+    background-color: var(--branco);
+    /* border: 1px solid; */
+    border-radius: 30px;
+    box-shadow: 0 0 10px var(--branco);
+
+    width: 90%;
+    min-height: 70%;
+
+
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.form-criar hr {
+    width: 90%;
+}
+
+
+/* HEADER DO FORMULARIO */
+.form-criar .form-titulo {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-titulo b {
+    color: rgb(97, 88, 88);
+}
+
+.form-titulo {
+    padding: 10px;
+    padding-left: 20px;
+}
+
+/* CAMPOS DO FORMULARIO */
+.campos-form-criar {
+    /* border: 1px solid; */
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+}
+
+.campos-form-criar label{
+    text-transform: capitalize;
+}
+
+.campos-form-criar .campo-50 {
+    width: 48%;
+    margin: 0 1%;
+}
+
+.campo-email {
+    padding: 0 10px;
+}
+
+.btn-criar {
+    padding: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width:412px) {
+
+    .formulario input {
+        font-size: 13px;
+    }
+}

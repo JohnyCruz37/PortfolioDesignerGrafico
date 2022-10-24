@@ -1,0 +1,27 @@
+.section{
+    /* border: 1px solid yellow; */
+    background-color: var(--vdopaco);
+    height: auto;
+    min-height: 400px;
+}
+.section-cards{
+    /* border: 1px solid orange; */
+    height: 100%;
+    margin: 20px;
+
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+@media (max-width:412px){
+    .section-cards{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}

@@ -1,0 +1,44 @@
+/* .entrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--branco);
+    width: 100vw;
+    max-width: 1440px;
+    min-height: 100vh;
+    height: auto;
+    padding: 60px 40px;
+} */
+
+.icone-senha {
+    /* border: 1px solid green; */
+    width: 15%;
+
+    font-size: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: .3s;
+}
+
+.icone-senha:hover {
+    transition: .3s;
+    cursor: pointer;
+
+    transform: scale(1.2);
+
+}
+
+.btn-criar{
+    margin: 10px;
+}
+
+
+/* mobile */
+@media (max-width:412px) {
+    .icone-senha {
+        padding: 5px;
+    }
+}

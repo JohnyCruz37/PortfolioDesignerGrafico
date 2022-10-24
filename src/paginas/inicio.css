@@ -1,0 +1,22 @@
+.inicio,
+.entrar,
+.cadastro,
+.portfolio,
+.teste,
+.pesquisa,
+.carregando-pagina {
+    background-color: var(--branco);
+    width: 100vw;
+    max-width: 1440px;
+    min-height: 100vh;
+    height: auto;
+    padding: 60px 40px;
+}
+
+@media (max-width:412px) {
+
+    .entrar {
+        padding: 0;
+    }
+
+}

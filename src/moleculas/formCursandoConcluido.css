@@ -1,0 +1,23 @@
+.formCursandoConcluido {
+    /* border: 1px solid; */
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.formCursandoConcluido .legend {
+    margin-left: 5px;
+}
+
+.formCursandoConcluido button {
+    margin: 5px;
+
+}
+
+.formCursandoConcluido .campo {
+    margin-bottom: 5px;
+
+}

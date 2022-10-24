@@ -1,0 +1,12 @@
+.campo{
+    border-radius: 20px;
+    border: 1px solid gray;
+    width: 100%;
+}
+
+@media (max-width:412px) {
+  .campo{
+    border-radius: 15px;
+  }
+
+}

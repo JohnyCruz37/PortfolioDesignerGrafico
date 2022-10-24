@@ -1,0 +1,63 @@
+.teste,
+.efeito {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carregando-texto {
+    text-align: center;
+    font-weight: bolder;
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+.carregando {
+    border-left: 10px groove var(--vdbandeira);
+    border-right: 10px groove var(--vdbandeira);
+    border-top: 10px groove var(--vdescuro);
+    border-bottom: 10px groove var(--vdbandeira);
+
+    width: 3vw;
+    height: 3vw;
+
+    margin: 5px;
+
+    animation: transformar 3s infinite;
+
+}
+
+.c2 {
+    animation-delay: .4s;
+}
+
+.c3 {
+    animation-delay: .6s;
+}
+
+.c4 {
+    animation-delay: .8s;
+}
+
+@keyframes transformar {
+
+
+    0% {
+        border-radius: none;
+        transform: rotate(-1turn);
+        opacity: 1;
+    }
+
+    50% {
+        border-radius: 50%;
+        opacity: 0;
+
+    }
+
+    100% {
+        border-radius: 0;
+
+    }
+
+
+}

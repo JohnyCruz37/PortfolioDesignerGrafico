@@ -1,0 +1,13 @@
+.TabPortfolio {
+    padding: 5px;
+    width: auto;
+    height: auto;
+}
+
+.filtro-projetos{
+    /* border: 1px solid; */
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    align-items: center;
+}
