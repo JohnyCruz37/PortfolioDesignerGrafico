@@ -52,9 +52,9 @@ const Header = () => {
           </Link>
 
           {/* Menu suspenso Entrar ou criar conta */}
-          <div class="dropdown">
+          <div className="dropdown">
             <button
-              class="btn btn-secondary dropdown-toggle"
+              className="btn btn-secondary dropdown-toggle"
               type="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
@@ -62,10 +62,10 @@ const Header = () => {
             >
               acesso
             </button>
-            <ul class="dropdown-menu">
+            <ul className="dropdown-menu">
               {/* modal para login */}
               <li>
-                <button class="dropdown-item" onClick={modalEntrarAbrir}>
+                <button className="dropdown-item" onClick={modalEntrarAbrir}>
                   entrar
                 </button>
                 <Modal
@@ -81,7 +81,7 @@ const Header = () => {
 
               {/* modal para criar conta */}
               <li>
-                <button class="dropdown-item" onClick={modalCriarAbrir}>
+                <button className="dropdown-item" onClick={modalCriarAbrir}>
                   criar conta
                 </button>
                 <Modal
@@ -108,88 +108,86 @@ const Header = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          
+
           {/* menu lateral */}
           <div
             className="offcanvas offcanvas-end text-bg-dark container custom"
-            tabindex="-1"
+            tabIndex="-1"
             id="offcanvasNavbarDark"
             aria-labelledby="offcanvasNavbarDarkLabel"
           >
-
             {/* Titulo do menu lateral */}
-              <div className="offcanvas-header">
-                <h5
-                  className="offcanvas-title menu-titulo"
-                  id="offcanvasNavbarDarkLabel"
-                >
-                  saiba mais
-                </h5>
+            <div className="offcanvas-header">
+              <h5
+                className="offcanvas-title menu-titulo"
+                id="offcanvasNavbarDarkLabel"
+              >
+                saiba mais
+              </h5>
 
-                {/* Botão fechar do menu lateral */}
-                <button
-                  type="button"
-                  className="btn-close btn-close-white"
-                  data-bs-dismiss="offcanvas"
-                  aria-label="Close"
-                ></button>
-              </div>
+              {/* Botão fechar do menu lateral */}
+              <button
+                type="button"
+                className="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
 
-              {/* Corpo do menu lateral menu e pesquisar */}
-              <div className="offcanvas-body nav-bar nav-bar-expand-sm">
+            {/* Corpo do menu lateral menu e pesquisar */}
+            <div className="offcanvas-body nav-bar nav-bar-expand-sm">
+              {/* Lista menu */}
+              <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li className="nav-item">
+                  <Link className="nav-link" aria-current="true" to={"/"}>
+                    home
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className="nav-link"
+                    aria-current="true"
+                    to={"portfolio"}
+                  >
+                    portfolio
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <div
+                    type="button"
+                    className="nav-link"
+                    aria-current="true"
+                    onClick={modalPostarTrabalhoAbrir}
+                  >
+                    novo trabalho
+                  </div>
+                  <Modal
+                    isOpen={ModalPostarTrabalho}
+                    onRequestClose={modalPostarTrabalhoFechar}
+                    overlayClassName="modal-overlay"
+                    className="modal-postarTrabalho"
+                  >
+                    <BtnFechar fechar={modalPostarTrabalhoFechar} />
+                    <CadastroTrabalho />
+                  </Modal>
+                </li>
+              </ul>
 
-                {/* Lista menu */}
-                <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-                  <li className="nav-item">
-                    <Link className="nav-link" aria-current="true" to={"/"}>
-                      home
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      className="nav-link"
-                      aria-current="true"
-                      to={"portfolio"}
-                    >
-                      portfolio
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <div
-                      type="button"
-                      className="nav-link"
-                      aria-current="true"
-                      onClick={modalPostarTrabalhoAbrir}
-                    >
-                      novo trabalho
-                    </div>
-                    <Modal
-                      isOpen={ModalPostarTrabalho}
-                      onRequestClose={modalPostarTrabalhoFechar}
-                      overlayClassName="modal-overlay"
-                      className="modal-postarTrabalho"
-                    >
-                      <BtnFechar fechar={modalPostarTrabalhoFechar} />
-                      <CadastroTrabalho />
-                    </Modal>
-                  </li>
-                </ul>
-
-                {/* Pesquisar */}
-                <form className="d-flex mt-3 pesquisar" role="search">
-                  <input
-                    className="form-control me-2"
-                    type="search"
-                    placeholder="procurar"
-                    aria-label="Search"
-                  />
-                  <button className="btn btn-outline-success" type="submit">
-                    encontrar
-                  </button>
-                </form>
-              </div>
+              {/* Pesquisar */}
+              <form className="d-flex mt-3 pesquisar" role="search">
+                <input
+                  className="form-control me-2"
+                  type="search"
+                  placeholder="procurar"
+                  aria-label="Search"
+                />
+                <button className="btn btn-outline-success" type="submit">
+                  encontrar
+                </button>
+              </form>
             </div>
           </div>
+        </div>
       </nav>
     </header>
   );

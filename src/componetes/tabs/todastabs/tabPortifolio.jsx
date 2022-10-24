@@ -21,7 +21,7 @@ const TabPortfolio = () => {
         {/* area de pesquisa */}
         <form className="d-flex mt-3" role="search">
           <select
-            class="form-select form-select-sm example me-2"
+            className="form-select form-select-sm example me-2"
             aria-label=".form-select-sm"
           >
             <option selected>Escolha a tecnologia</option>

@@ -19,15 +19,15 @@ const CadastroTrabalho = () => {
 
       {/* CAMPO TITULO E DETALHES */}
       <div className="form">
-        <div class="mb-3">
+        <div className="mb-3">
           <Campo texto="Titulo" tipo="text" size="90" />
         </div>
-        <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="exampleFormControlTextarea1" className="form-label">
             Detalhes:
           </label>
           <textarea
-            class="form-control campo"
+            className="form-control campo"
             id="exampleFormControlTextarea1"
             rows="2"
           ></textarea>
@@ -36,10 +36,10 @@ const CadastroTrabalho = () => {
 
       {/* CHECK DAS TECNOLOGIAS */}
       <div className="d-flex justify-content-around flex-wrap opcoes-check">
-        <div class="form-check">
-          <label class="form-check-label" for="photoshop">
+        <div className="form-check">
+          <label className="form-check-label" htmlFor="photoshop">
             <input
-              class="form-check-input"
+              className="form-check-input"
               type="checkbox"
               value=""
               id="photoshop"
@@ -47,21 +47,21 @@ const CadastroTrabalho = () => {
             PhotoShop
           </label>
         </div>
-        <div class="form-check">
-          <label class="form-check-label" for="illustrator">
+        <div className="form-check">
+          <label className="form-check-label" htmlFor="illustrator">
             Illustrator
             <input
-              class="form-check-input"
+              className="form-check-input"
               type="checkbox"
               value=""
               id="illustrator"
             />
           </label>
         </div>
-        <div class="form-check">
-          <label class="form-check-label" for="corel">
+        <div className="form-check">
+          <label className="form-check-label" htmlFor="corel">
             <input
-              class="form-check-input"
+              className="form-check-input"
               type="checkbox"
               value=""
               id="corel"
@@ -69,10 +69,10 @@ const CadastroTrabalho = () => {
             Corel Drawn
           </label>
         </div>
-        <div class="form-check">
-          <label class="form-check-label" for="canvas">
+        <div className="form-check">
+          <label className="form-check-label" htmlFor="canvas">
             <input
-              class="form-check-input"
+              className="form-check-input"
               type="checkbox"
               value=""
               id="canvas"
@@ -80,15 +80,15 @@ const CadastroTrabalho = () => {
             Canvas
           </label>
         </div>
-        <div class="form-check">
+        <div className="form-check">
           <input
-            class="form-check-input"
+            className="form-check-input"
             type="checkbox"
             value=""
             id="outras"
             onChange={(e) => setOutros(e.target.checked)}
           />
-          <label class="form-check-label" for="outras">
+          <label className="form-check-label" htmlFor="outras">
             Outros
           </label>
           {outros ? (
@@ -102,9 +102,9 @@ const CadastroTrabalho = () => {
         <legend className="arquivo-legend">Adicione seu trabalho</legend>
         <div className="arquivo-campos">
           <div className="add-arquivo">
-            <label for="formFileLg" class="form-label">
+            <label htmlFor="formFileLg" className="form-label">
               <input
-                class="form-control form-control-lg"
+                className="form-control form-control-lg"
                 id="formFileLg"
                 type="file"
               />
@@ -112,8 +112,11 @@ const CadastroTrabalho = () => {
           </div>
 
           {/* BOTÃO COMPARTILHAS */}
-          <div class="col-12 btn-compartilhar">
-            <button type="submit" class="btn btn-outline-dark btn-lg shadow">
+          <div className="col-12 btn-compartilhar">
+            <button
+              type="submit"
+              className="btn btn-outline-dark btn-lg shadow"
+            >
               compartilhar
             </button>
           </div>

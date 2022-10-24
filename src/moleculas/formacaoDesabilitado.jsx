@@ -3,7 +3,9 @@ import "./dadosNivelEscolar.css";
 
 const FormacaoDesabilitado = (props) => {
 
-  const AbrirLink = () => {}
+  const AbrirLink = () => {
+    props.temaUrl
+  }
 
   return (
     <div className="Formacao-dados">
@@ -12,7 +14,7 @@ const FormacaoDesabilitado = (props) => {
           <CampoDesabilitado
             tipo="text"
             texto="Situação"
-            value="Cursando"
+            value={props.situacao}
             size="20"
           />
         </div>
@@ -34,7 +36,7 @@ const FormacaoDesabilitado = (props) => {
           <CampoDesabilitado
             tipo="text"
             texto="Nível"
-            value="Superior"
+            value={props.nivel}
             size="20"
           />
         </div>
@@ -43,7 +45,7 @@ const FormacaoDesabilitado = (props) => {
           <CampoDesabilitado
             tipo="text"
             texto="Instituição"
-            value="Nome da escola"
+            value={props.instituicao}
             size="50"
           />
         </div>
@@ -52,17 +54,17 @@ const FormacaoDesabilitado = (props) => {
           <CampoDesabilitado
             tipo="text"
             texto="Curso"
-            value="Nome do curso"
+            value={props.curso}
             size="80"
           />
         </div>
 
         <div className="dados-data">
-          <CampoDesabilitado tipo="date" texto="Inicio" />
+          <CampoDesabilitado tipo="date" texto="Inicio" value={props.inicio}/>
         </div>
 
         <div className="dados-data">
-          <CampoDesabilitado tipo="date" texto="Conclusão" />
+          <CampoDesabilitado tipo="date" texto="Conclusão" value={props.conclusao} />
         </div>
 
         <div className="dados-certificado">
@@ -70,7 +72,7 @@ const FormacaoDesabilitado = (props) => {
             <CampoDesabilitado
               tipo="text"
               texto="Titulo"
-              value="Titulo do certificado"
+              value={props.tema}
               size="50"
             />
           </div>
@@ -79,13 +81,14 @@ const FormacaoDesabilitado = (props) => {
             <CampoDesabilitado
               tipo="url"
               texto="Link do Certificado"
-              value="http://www.linkdoseucertificado/aqui"
+              value={props.temaUrl}
               size="100"
             />
           </div>
           <button
             type="button"
             className="btn btn-secondary btn-abri-certificado"
+            onClick={AbrirLink}
           >
             abrir certificado
           </button>

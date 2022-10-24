@@ -8,19 +8,12 @@ router.post('/', multer(multerConfig).single('file') , async (req, res) =>{
 
     //body da requisição
     const { titulo, detalhes, tecnologia, imagem, curtida} = req.body;
-    const {nome, chave, url, tamanho} = imagem;
 
 
     const postagem = {
         titulo,
         detalhes,
         tecnologia,
-        imagem{
-            nome, 
-            chave, 
-            url,
-            tamanho,
-        },
         curtida,
 
     }

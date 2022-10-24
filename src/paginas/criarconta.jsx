@@ -16,44 +16,44 @@ const CriarConta = () => {
       {/* Campos do formulario */}
       <fieldset className="campos-form-criar">
         {/* Nome */}
-        <div class="input-group row g-2 mb-3 campo-50">
-          <div class="form-floating">
+        <div className="input-group row g-2 mb-3 campo-50">
+          <div className="form-floating">
             <input
               type="text"
-              class="form-control shadow campo"
+              className="form-control shadow campo"
               id="floatingInputGrid"
               placeholder="nome"
               required
             />
-            <label for="floatingInputGrid">Nome</label>
+            <label htmlFor="floatingInputGrid">Nome</label>
           </div>
         </div>
 
         {/* sobrenome */}
-        <div class="input-group row g-2 mb-3 campo-50">
-          <div class="form-floating">
+        <div className="input-group row g-2 mb-3 campo-50">
+          <div className="form-floating">
             <input
               type="text"
-              class="form-control shadow campo"
+              className="form-control shadow campo"
               id="floatingInputGrid"
               placeholder="sobrenome"
               required
             />
-            <label for="floatingInputGrid">Sobrenome</label>
+            <label htmlFor="floatingInputGrid">Sobrenome</label>
           </div>
         </div>
 
         {/* email */}
-        <div class="input-group campo-email">
-          <div class="form-floating mb-3">
+        <div className="input-group campo-email">
+          <div className="form-floating mb-3">
             <input
               type="email"
-              class="form-control shadow campo"
+              className="form-control shadow campo"
               id="floatingInput"
               placeholder="name@example.com"
               required
             />
-            <label for="floatingInput">Email</label>
+            <label htmlFor="floatingInput">Email</label>
           </div>
         </div>
 
@@ -62,22 +62,22 @@ const CriarConta = () => {
         </div>
 
         {/* confirmação da senha */}
-        <div class="input-group row g-2 campo-50">
-          <div class="form-floating mb-3">
+        <div className="input-group row g-2 campo-50">
+          <div className="form-floating mb-3">
             <input
               type="password"
-              class="form-control shadow campo"
+              className="form-control shadow campo"
               id="floatingInputGrid"
               placeholder="confirmar senha"
               required
             />
-            <label for="floatingInputGrid">confirmar senha</label>
+            <label htmlFor="floatingInputGrid">confirmar senha</label>
           </div>
         </div>
       </fieldset>
 
-      <div class="col-12 btn-criar">
-        <button type="submit" class="btn btn-secondary btn-lg shadow">
+      <div className="col-12 btn-criar">
+        <button type="submit" className="btn btn-secondary btn-lg shadow">
           criar
         </button>
       </div>

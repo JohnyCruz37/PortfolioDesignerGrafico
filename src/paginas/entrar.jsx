@@ -1,6 +1,6 @@
 import "../paginas/formulario.css";
 import "../paginas/entrar.css";
-import {RiLockPasswordLine} from "react-icons/ri"
+import { RiLockPasswordLine } from "react-icons/ri";
 
 import React from "react";
 import Campo from "../atomo/campo";
@@ -20,16 +20,16 @@ const Entrar = () => {
       <hr />
       <fieldset className="formulario">
         {/* Campo email */}
-        <div class="input-group">
-          <div class="form-floating mb-3">
+        <div className="input-group">
+          <div className="form-floating mb-3">
             <Campo tipo="email" texto="E-mail" icone={<AiOutlineMail />} />
           </div>
         </div>
 
-        <CampoSenha icone={ <RiLockPasswordLine/> }/>
+        <CampoSenha icone={<RiLockPasswordLine />} />
 
-        <div class="col-12 btn-criar">
-          <button type="submit" class="btn btn-outline-dark btn-lg shadow">
+        <div className="col-12 btn-criar">
+          <button type="submit" className="btn btn-outline-dark btn-lg shadow">
             entrar
           </button>
         </div>

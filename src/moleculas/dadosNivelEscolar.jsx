@@ -22,36 +22,27 @@ const DadosNivelEscolar = () => {
           setDadosFormacao(dados);
         })
         .catch((error) => console.log(error));
-
-      console.log(res);
     }
 
     getDadosFormacao();
-    console.log(dadosFormacao);
   }, []);
-
-  return (
-    <article className="Formacao">
-      {editar ? (
-        <>
-          <FormacaoHabilitado funcao={cancelarEdicao} />
-        </>
-      ) : (
-        <>
-          <FormacaoDesabilitado funcao={habilitarEditar} />
-        </>
-      )}
-      <div className="Formacao-dados testando">
-        <h3>teste</h3>
-        {dadosFormacao.map((dado) => {
-          <div>
-            <p>Deu certo!!!!</p>
-            <p key={dado._id}> {dado.situacao} </p>;
-          </div>;
-        })}
-      </div>
-    </article>
-  );
+  {
+    dadosFormacao.map((dado) => {
+      return (
+        <article className="Formacao" key={dado._id}>
+          {editar ? (
+            <>
+              <FormacaoHabilitado funcao={cancelarEdicao} />
+            </>
+          ) : (
+            <>
+              <FormacaoDesabilitado funcao={habilitarEditar} />
+            </>
+          )}
+        </article>
+      );
+    });
+  }
 };
 
 export default DadosNivelEscolar;

@@ -2,13 +2,13 @@ import "./form-radio.css";
 
 const FormRadio = (props) => {
   return (
-    <fieldset class="nivel">
+    <fieldset className="nivel">
       <legend> {props.titulo} </legend>
 
-      <div class="form-check">
-        <label class="form-check-label" for={props.id}>
+      <div className="form-check">
+        <label className="form-check-label" for={props.id}>
           <input
-            class="form-check-input"
+            className="form-check-input"
             type="radio"
             name={props.nome}
             id={props.id}
@@ -16,9 +16,9 @@ const FormRadio = (props) => {
           <p>{props.estado1}</p>
         </label>
 
-        <label class="form-check-label" for={props.id2}>
+        <label className="form-check-label" for={props.id2}>
           <input
-            class="form-check-input"
+            className="form-check-input"
             type="radio"
             name={props.nome}
             id={props.id2}

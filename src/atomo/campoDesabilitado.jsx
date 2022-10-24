@@ -2,10 +2,10 @@ import "./campo.css";
 
 const CampoDesabilitado = (props) => {
   return (
-    <div class="form-floating">
+    <div className="form-floating">
       <input
         type={props.tipo}
-        class="form-control shadow campo"
+        className="form-control shadow campo"
         id={props.texto}
         placeholder={props.texto}
         key={props.key}
@@ -13,7 +13,7 @@ const CampoDesabilitado = (props) => {
         size={props.size}
         disabled
       />
-      <label for={props.texto}>{props.texto}</label>
+      <label htmlFor={props.texto}>{props.texto}</label>
     </div>
   );
 };
