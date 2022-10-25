@@ -4,13 +4,13 @@ import PerfilFormacao from "../../../moleculas/perfilFormacao";
 
 const TabPerfil = () => {
   return (
-    <article className="perfil">
+    <section className="perfil">
       <PerfilUsuario />
       <PerfilContato />
       <PerfilFormacao />
       <div className="perfil-certificado"></div>
       <div className="perfil-carreira"></div>
-    </article>
+    </section>
   );
 };
 

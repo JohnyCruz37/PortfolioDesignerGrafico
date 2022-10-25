@@ -29,6 +29,10 @@ app.use("/formacao", formacaoRotas);
 const postagemRotas = require('./routes/postagemRoutes');
 app.use("/postagem", postagemRotas);
 
+//Rota da bio
+const bioRotas = require('./routes/bioRoutes');
+app.use('/bio', bioRotas );
+
 //endpoint (rotas)
 app.get('/', (req, res) => {
     res.json({msg: "funcionando"})

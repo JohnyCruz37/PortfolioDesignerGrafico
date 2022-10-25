@@ -2,11 +2,6 @@ import CampoDesabilitado from "../atomo/campoDesabilitado";
 import "./dadosNivelEscolar.css";
 
 const FormacaoDesabilitado = (props) => {
-
-  const AbrirLink = () => {
-    props.temaUrl
-  }
-
   return (
     <div className="Formacao-dados">
       <div className="dados-status">
@@ -60,11 +55,15 @@ const FormacaoDesabilitado = (props) => {
         </div>
 
         <div className="dados-data">
-          <CampoDesabilitado tipo="date" texto="Inicio" value={props.inicio}/>
+          <CampoDesabilitado tipo="date" texto="Inicio" value={props.inicio} />
         </div>
 
         <div className="dados-data">
-          <CampoDesabilitado tipo="date" texto="Conclusão" value={props.conclusao} />
+          <CampoDesabilitado
+            tipo="date"
+            texto="Conclusão"
+            value={props.conclusao}
+          />
         </div>
 
         <div className="dados-certificado">
@@ -88,7 +87,6 @@ const FormacaoDesabilitado = (props) => {
           <button
             type="button"
             className="btn btn-secondary btn-abri-certificado"
-            onClick={AbrirLink}
           >
             abrir certificado
           </button>

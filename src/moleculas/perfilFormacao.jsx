@@ -12,7 +12,7 @@ const PerfilFormacao = () => {
 
   const AbriFormulario = () => setFormulario(true);
   const ocultarFormulario = () => setFormulario(false);
-  
+
   return (
     <div className="perfil-formacao">
       <div className="botao-formulario">
@@ -33,13 +33,14 @@ const PerfilFormacao = () => {
               class="form-select"
               aria-label="Default select example"
               required
+              defaultValue="1"
             >
               <option selected>Ensino</option>
-              <option value="1">Médio</option>
-              <option value="2">Complementar / especialização</option>
-              <option value="3">Técnico</option>
-              <option value="4">Superior</option>
-              <option value="5">Pós-Graduação</option>
+              <option value="2">Médio</option>
+              <option value="3">Complementar / especialização</option>
+              <option value="4">Técnico</option>
+              <option value="5">Superior</option>
+              <option value="6">Pós-Graduação</option>
             </select>
           </fieldset>
 
