@@ -3,6 +3,7 @@ import Campo from "../atomo/campo";
 import "./formCursandoConcluido.css";
 
 const FormCursandoConcluido = (props) => {
+
   return (
     <fieldset className="formCursandoConcluido">
       <legend className="legend"> {props.titulo} </legend>

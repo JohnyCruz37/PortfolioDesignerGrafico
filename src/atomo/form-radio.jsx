@@ -6,21 +6,21 @@ const FormRadio = (props) => {
       <legend> {props.titulo} </legend>
 
       <div className="form-check">
-        <label className="form-check-label" for={props.id}>
+        <label className="form-check-label" htmlFor={props.id}>
           <input
             className="form-check-input"
             type="radio"
-            name={props.nome}
+            name={props.name}
             id={props.id}
           />
           <p>{props.estado1}</p>
         </label>
 
-        <label className="form-check-label" for={props.id2}>
+        <label className="form-check-label" htmlFor={props.id2}>
           <input
             className="form-check-input"
             type="radio"
-            name={props.nome}
+            name={props.name}
             id={props.id2}
           />
           <p>{props.estado2}</p>

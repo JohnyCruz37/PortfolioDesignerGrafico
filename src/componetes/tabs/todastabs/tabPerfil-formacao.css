@@ -58,6 +58,10 @@
 
 }
 
+.form-curso input{
+    margin-bottom: 5px;
+}
+
 .btn-formacao {
     grid-area: 3 / 1 / 4 / 2;
     display: flex;
@@ -73,4 +77,46 @@
 
 .btn-cancelar {
     margin-right: 5px;
+}
+
+@media (max-width: 412px){
+
+    .botao-formulario button{
+        width: 90%;
+    }
+
+    .form-formacao {
+        /* border: 1px solid red; */
+        margin-bottom: 5px;
+        padding: 5px;
+    
+        display: flex;
+        flex-direction: column;
+    }
+
+    .status {
+        margin-bottom: 10px;
+    }
+
+    .btn-formacao {
+        grid-area: 3 / 1 / 4 / 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+
+    .btn-formacao button {
+        margin-left: 5px;
+        margin-right: 5px;
+    
+    }
+
+    .btn-cancelar {
+       text-align: center;
+       width: 300px;
+    }
+    
+    
+    
 }

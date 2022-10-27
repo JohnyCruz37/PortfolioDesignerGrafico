@@ -16,7 +16,9 @@ const Bio = (props) => {
               rows={props.rows}
               maxLength={props.maxLength}
               placeholder="Escreva agora!"
-            ></textarea>
+            >
+              {props.texto}
+            </textarea>
           </div>
           <button
             className="btn btn-secondary editar-textarea-salvar"
@@ -28,15 +30,18 @@ const Bio = (props) => {
         </>
       ) : (
         <>
-        <div className="bio">
-          <textarea 
-            cols={props.cols}
-            rows={props.rows}
-            maxLength={props.maxLength}
-            disabled
-          ></textarea>
-          <AiOutlineEdit className="editar-textarea" onClick={Editar} />
-        </div>
+          <div className="bio">
+            <textarea
+              cols={props.cols}
+              rows={props.rows}
+              maxLength={props.maxLength}
+              value={props.texto}
+              disabled
+            >
+              {" "}
+            </textarea>
+            <AiOutlineEdit className="editar-textarea" onClick={Editar} />
+          </div>
         </>
       )}
     </div>

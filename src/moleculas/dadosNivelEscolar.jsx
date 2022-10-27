@@ -8,6 +8,8 @@ import Api from "../servidor/api";
 const DadosNivelEscolar = () => {
   //Habilitar e desabilitar edição
   const [editar, setEditar] = useState(false);
+  const Editar = () => setEditar(true)
+  const cancelar = () => setEditar(false)
 
   //Pegando dados de Formação da API
   const [dadosFormacao, setDadosFormacao] = useState([]);
@@ -25,11 +27,6 @@ const DadosNivelEscolar = () => {
     getDadosFormacao();
   }, []);
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    setEditar(!editar);
-  };
-
   return (
     <div>
       {dadosFormacao &&
@@ -38,7 +35,7 @@ const DadosNivelEscolar = () => {
             {editar ? (
               <>
                 <FormacaoHabilitado
-                  funcao={handleClick}
+                  funcao = {cancelar}
                   situacao={dado.situacao}
                   nivel={dado.nivel}
                   instituicao={dado.instituicao}
@@ -47,13 +44,12 @@ const DadosNivelEscolar = () => {
                   conclusao={dado.conclusao}
                   tema={dado.tema}
                   temaUrl={dado.temaUrl}
-                  key={dado._id}
                 />
               </>
             ) : (
               <>
                 <FormacaoDesabilitado
-                  funcao={handleClick}
+                  funcao={Editar}
                   situacao={dado.situacao}
                   nivel={dado.nivel}
                   instituicao={dado.instituicao}
@@ -62,7 +58,6 @@ const DadosNivelEscolar = () => {
                   conclusao={dado.conclusao}
                   tema={dado.tema}
                   temaUrl={dado.temaUrl}
-                  key={dado._id}
                 />
               </>
             )}

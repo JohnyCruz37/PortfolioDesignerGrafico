@@ -2,8 +2,43 @@ import "../componetes/tabs/todastabs/tabPerfil-capa.css";
 import imgPerfil from "../img/perfil.jpeg";
 import imgCapa from "../img/arquitetura.jpg";
 import Bio from "../atomo/bio";
+import Api from "../servidor/api";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const PerfilUsuario = () => {
+  const [bio, setBio] = useState([]);
+
+  useEffect(() => {
+    async function getBio() {
+      const res = await Api.get("/bio")
+        .then((response) => {
+          const dados = response.data;
+          setBio(dados);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+
+    getBio();
+  }, []);
+
+  // async function postBio(texto) {
+  //   fetch(Api.post('/bio'), {
+  //     headers: {'content-Type': 'application/json'},
+  //     body: JSON.stringify(texto)
+  //   })
+  //     .then(resposta =>{
+  //       if (resposta.ok) {
+  //         this.getBio();
+  //       } else {
+  //         alert('Sua bio não foi adicionada')
+  //       }
+  //     })
+
+  // }
+
   return (
     <div className="perfil-img">
       <img className="capa-perfil" src={imgCapa} alt="" />
@@ -16,12 +51,12 @@ const PerfilUsuario = () => {
             <h3>Johny Cruz</h3>
           </div>
         </div>
-        <div className="bio">
-          <Bio
-            rows="3"
-            maxLength="200"
-          />
-        </div>
+        {bio &&
+          bio.map((dado) => (
+            <div className="bio" key={dado._id}>
+              <Bio rows="3" maxLength="200" texto={dado.texto} />
+            </div>
+          ))}
       </div>
     </div>
   );

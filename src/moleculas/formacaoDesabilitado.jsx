@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CampoDesabilitado from "../atomo/campoDesabilitado";
 import "./dadosNivelEscolar.css";
 
@@ -84,12 +85,14 @@ const FormacaoDesabilitado = (props) => {
               size="100"
             />
           </div>
-          <button
-            type="button"
-            className="btn btn-secondary btn-abri-certificado"
-          >
-            abrir certificado
-          </button>
+          <Link to={`${props.temaUrl}`} target="_blank">
+            <button
+              type="button"
+              className="btn btn-secondary btn-abri-certificado"
+            >
+              abrir certificado
+            </button>
+          </Link>
         </div>
       </div>
     </div>

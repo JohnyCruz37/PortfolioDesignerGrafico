@@ -46,6 +46,17 @@ router.patch('/:id', async (req, res) => {
     }
 })
 
+//mostra bio
+router.get('/', async (req, res) => {
+    try {
+        const bio = await Bio.find()
+        res.status(200).json(bio)
+    } catch (error) {
+        res.status(500).json({error:error})
+        return
+    }
+})
+
 //deletar bio
 router.delete('/:id', async (req, res) => {
     const id = req.params.id
