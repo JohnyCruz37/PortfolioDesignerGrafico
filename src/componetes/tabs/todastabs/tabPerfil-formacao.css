@@ -37,7 +37,18 @@
     border-top: 1px solid var(--vdescuro);
     border-right: 1px solid var(--vdescuro);
     display: flex;
+    flex-flow: row wrap;
 }
+
+.status input,
+.status label label {
+    margin: 5px;
+}
+
+.status label {
+    width: 100%;
+}
+
 
 .form-check {
     /* border: 1px solid; */
@@ -58,7 +69,7 @@
 
 }
 
-.form-curso input{
+.form-curso input {
     margin-bottom: 5px;
 }
 
@@ -79,9 +90,10 @@
     margin-right: 5px;
 }
 
-@media (max-width: 412px){
+/* mobile */
+@media (max-width: 412px) {
 
-    .botao-formulario button{
+    .botao-formulario button {
         width: 90%;
     }
 
@@ -89,7 +101,7 @@
         /* border: 1px solid red; */
         margin-bottom: 5px;
         padding: 5px;
-    
+
         display: flex;
         flex-direction: column;
     }
@@ -103,20 +115,20 @@
         display: flex;
         justify-content: center;
         align-items: center;
-    
+
     }
 
     .btn-formacao button {
         margin-left: 5px;
         margin-right: 5px;
-    
+
     }
 
     .btn-cancelar {
-       text-align: center;
-       width: 300px;
+        text-align: center;
+        width: 300px;
     }
-    
-    
-    
+
+
+
 }

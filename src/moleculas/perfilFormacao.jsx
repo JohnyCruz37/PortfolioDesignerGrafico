@@ -1,6 +1,9 @@
 //Hooks
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { ErrorMessage } from "@hookform/error-message";
 
 //Componentes
 
@@ -10,6 +13,16 @@ import Titulo from "../atomo/titulo";
 //CSS
 import "../componetes/tabs/todastabs/tabPerfil-formacao.css";
 import "../atomo/campo.css";
+
+// funções
+// const validarFormacao = yup.object().shape({
+//   nivel: yup.string().required,
+//   situacao: yup.string().required,
+//   instituicao: yup.string().required,
+//   curso: yup.string().required,
+//   inicio: yup.date().required,
+//   termino: yup.date().required,
+// });
 
 const PerfilFormacao = () => {
   //ABRIR FORMULÁRIO//
@@ -26,6 +39,9 @@ const PerfilFormacao = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  //   {
+  //   resolver: yupResolver(validarFormacao),
+  // }
 
   const EnviarFormacao = (dados) => console.log(dados);
 
@@ -53,16 +69,25 @@ const PerfilFormacao = () => {
             {/* nível de estudo */}
             <fieldset className="mb-3 nivel-estudo">
               <legend>Nível de estudo</legend>
+              <ErrorMessage errors={errors} name="nivel" />
+              <ErrorMessage
+                className="error-menssage"
+                errors={errors}
+                name="nivel"
+                render={({ message }) => {
+                  <p>{message}</p>;
+                }}
+              />
               <select
                 className="form-select"
                 aria-label="Default select example"
-                required
-                defaultValue="1"
                 name="nivel"
-                {...register("nivel")}
+                {...register("nivel", {
+                  required: "Em que nível está essa nova formação?",
+                })}
               >
-                <option value="Ensino" name="nivel">
-                  Ensino
+                <option value="" name="nivel" selected>
+                  Escolha uma opção
                 </option>
                 <option value="Médio" name="nivel">
                   Médio
@@ -81,13 +106,17 @@ const PerfilFormacao = () => {
                 </option>
               </select>
             </fieldset>
-
             {/* status do curso */}
             <fieldset className="status">
               <legend> Situação da Formação </legend>
 
               <div className="form-check">
-                <label {...register("situacao")}>
+                <label
+                  {...register("situacao", {
+                    required:
+                      "Você não selecionou a situação atual da sua nova formação!",
+                  })}
+                >
                   <label className="form-check-label" htmlFor="cursando">
                     <input
                       className="form-check-input"
@@ -111,6 +140,15 @@ const PerfilFormacao = () => {
                   </label>
                 </label>
               </div>
+              <ErrorMessage errors={errors} name="situacao" />
+              <ErrorMessage
+                className="error-menssage"
+                errors={errors}
+                name="situacao"
+                render={({ message }) => {
+                  <p>{message}</p>;
+                }}
+              />
             </fieldset>
 
             {/* Informações sobre o curso */}
@@ -119,6 +157,14 @@ const PerfilFormacao = () => {
                 <legend> Informações sobre o curso </legend>
 
                 {/* escola ou instituição */}
+                <ErrorMessage errors={errors} name="instituicao" />
+                <ErrorMessage
+                  errors={errors}
+                  name="instituicao"
+                  render={({ message }) => {
+                    <p>{message}</p>;
+                  }}
+                />
                 <div className="form-floating">
                   <input
                     type="text"
@@ -127,12 +173,23 @@ const PerfilFormacao = () => {
                     placeholder="Instituição de ensino"
                     size="30"
                     name="instituicao"
-                    {...register("instituicao")}
+                    {...register("instituicao", {
+                      required: "Conte-nos onde estudou!",
+                    })}
                   />
+
                   <label htmlFor="Instituicao">Instituição</label>
                 </div>
 
                 {/* curso */}
+                <ErrorMessage errors={errors} name="curso" />
+                <ErrorMessage
+                  errors={errors}
+                  name="curso"
+                  render={({ message }) => {
+                    <p>{message}</p>;
+                  }}
+                />
                 <div className="form-floating">
                   <input
                     type="text"
@@ -141,33 +198,58 @@ const PerfilFormacao = () => {
                     placeholder="Tema do meu curso"
                     size="30"
                     name="curso"
-                    {...register("curso")}
+                    {...register("curso", {
+                      required: "Eai?! O que você estudou/estuda",
+                    })}
                   />
+
                   <label htmlFor="Curso">Curso</label>
                 </div>
 
                 {/* inicio */}
+                <ErrorMessage errors={errors} name="inicio" />
+                <ErrorMessage
+                  errors={errors}
+                  name="inicio"
+                  render={({ message }) => {
+                    <p>{message}</p>;
+                  }}
+                />
                 <div className="form-floating">
                   <input
                     type="date"
                     className="form-control shadow campo"
                     id="Inicio"
                     size="30"
-                    name="Inicio"
-                    {...register("Inicio")}
+                    name="inicio"
+                    {...register("inicio", {
+                      required: "Quando iniciou essa formação?",
+                    })}
                   />
+
                   <label htmlFor="Inicio">Inicio</label>
                 </div>
 
                 {/* Conclusão*/}
+                <ErrorMessage errors={errors} name="termino" />
+                <ErrorMessage
+                  errors={errors}
+                  name="termino"
+                  render={({ message }) => {
+                    <p>{message}</p>;
+                  }}
+                />
                 <div className="form-floating">
                   <input
                     type="date"
                     className="form-control shadow campo"
                     id="Termino"
                     size="30"
-                    name="Termino"
-                    {...register("Termino")}
+                    name="termino"
+                    {...register("termino", {
+                      required:
+                        "Se não souber quanto terminou/terminará coloque uma data aproximad.",
+                    })}
                   />
                   <label htmlFor="Termino">
                     Finalizado ou previsão de termino do curso
