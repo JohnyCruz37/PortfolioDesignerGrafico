@@ -86,7 +86,7 @@ const PerfilFormacao = () => {
                   required: "Em que nível está essa nova formação?",
                 })}
               >
-                <option value="" name="nivel" selected>
+                <option value="1" name="nivel">
                   Escolha uma opção
                 </option>
                 <option value="Médio" name="nivel">
@@ -106,39 +106,44 @@ const PerfilFormacao = () => {
                 </option>
               </select>
             </fieldset>
+
             {/* status do curso */}
             <fieldset className="status">
               <legend> Situação da Formação </legend>
 
               <div className="form-check">
-                <label
+                <div
                   {...register("situacao", {
                     required:
                       "Você não selecionou a situação atual da sua nova formação!",
                   })}
                 >
-                  <label className="form-check-label" htmlFor="cursando">
-                    <input
-                      className="form-check-input"
-                      type="radio"
-                      name="situacao"
-                      value="Cursando"
-                      id="cursando"
-                    />
-                    <p>Cursando</p>
-                  </label>
+                  <div>
+                    <label className="form-check-label" htmlFor="cursando">
+                      <input
+                        className="form-check-input"
+                        type="radio"
+                        name="situacao"
+                        value="Cursando"
+                        id="cursando"
+                      />
+                      <p>Cursando</p>
+                    </label>
+                  </div>
 
-                  <label className="form-check-label" htmlFor="concluido">
-                    <input
-                      className="form-check-input"
-                      type="radio"
-                      name="situacao"
-                      value="Concluido"
-                      id="concluido"
-                    />
-                    <p>Concluido</p>
-                  </label>
-                </label>
+                  <div>
+                    <label className="form-check-label" htmlFor="concluido">
+                      <input
+                        className="form-check-input"
+                        type="radio"
+                        name="situacao"
+                        value="Concluido"
+                        id="concluido"
+                      />
+                      <p>Concluido</p>
+                    </label>
+                  </div>
+                </div>
               </div>
               <ErrorMessage errors={errors} name="situacao" />
               <ErrorMessage
@@ -174,7 +179,7 @@ const PerfilFormacao = () => {
                     size="30"
                     name="instituicao"
                     {...register("instituicao", {
-                      required: "Conte-nos onde estudou!",
+                      required: "Conte-nos onde estudou/estuda!",
                     })}
                   />
 
@@ -248,7 +253,7 @@ const PerfilFormacao = () => {
                     name="termino"
                     {...register("termino", {
                       required:
-                        "Se não souber quanto terminou/terminará coloque uma data aproximad.",
+                        "Se não souber quanto terminou/terminará coloque uma data aproximada.",
                     })}
                   />
                   <label htmlFor="Termino">
