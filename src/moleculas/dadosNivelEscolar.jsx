@@ -1,9 +1,16 @@
+// HOOKS
 import { useState } from "react";
 import { useEffect } from "react";
-import "./dadosNivelEscolar.css";
+
+//COMPONENTES
 import FormacaoDesabilitado from "./formacaoDesabilitado";
 import FormacaoHabilitado from "./formacaoHabilitado";
+
+//CONSUMINDO API
 import Api from "../servidor/api";
+
+//CSS
+import "./dadosNivelEscolar.css";
 
 const DadosNivelEscolar = () => {
   //Habilitar e desabilitar edição

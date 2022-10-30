@@ -1,37 +1,27 @@
-//Hooks
+//HOOKS E PACOTES
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import { ErrorMessage } from "@hookform/error-message";
+import {  } from "react-router-dom";
 
 //Componentes
 
 import DadosNivelEscolar from "./dadosNivelEscolar";
 import Titulo from "../atomo/titulo";
 
+//consumindo API
+import Api from "../servidor/api";
+
 //CSS
 import "../componetes/tabs/todastabs/tabPerfil-formacao.css";
 import "../atomo/campo.css";
-
-// funções
-// const validarFormacao = yup.object().shape({
-//   nivel: yup.string().required,
-//   situacao: yup.string().required,
-//   instituicao: yup.string().required,
-//   curso: yup.string().required,
-//   inicio: yup.date().required,
-//   termino: yup.date().required,
-// });
 
 const PerfilFormacao = () => {
   //ABRIR FORMULÁRIO//
   const [formulario, setFormulario] = useState(false);
 
   const AbriFormulario = () => setFormulario(true);
-  const ocultarFormulario = (dados) => {
-    setFormulario(false);
-  };
+  const ocultarFormulario = () => setFormulario(false);
 
   //controle do formulário
   const {
@@ -39,11 +29,15 @@ const PerfilFormacao = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  //   {
-  //   resolver: yupResolver(validarFormacao),
-  // }
 
-  const EnviarFormacao = (dados) => console.log(dados);
+  //Redirecionamento da página caso requisição feita com sucesso
+
+
+  //API
+  const EnviarFormacao = (dados) =>
+    Api.post("/formacao", dados)
+      .then(() => console.log('Deu certo'))
+      .catch(() => console.log("Deu errado"));
 
   return (
     <div className="perfil-formacao">
@@ -236,10 +230,10 @@ const PerfilFormacao = () => {
                 </div>
 
                 {/* Conclusão*/}
-                <ErrorMessage errors={errors} name="termino" />
+                <ErrorMessage errors={errors} name="conclusao" />
                 <ErrorMessage
                   errors={errors}
-                  name="termino"
+                  name="conclusao"
                   render={({ message }) => {
                     <p>{message}</p>;
                   }}
@@ -248,16 +242,16 @@ const PerfilFormacao = () => {
                   <input
                     type="date"
                     className="form-control shadow campo"
-                    id="Termino"
+                    id="conclusao"
                     size="30"
-                    name="termino"
-                    {...register("termino", {
+                    name="conclusao"
+                    {...register("conclusao", {
                       required:
-                        "Se não souber quanto terminou/terminará coloque uma data aproximada.",
+                        "Se não souber quando terminou/terminará coloque uma data aproximada.",
                     })}
                   />
-                  <label htmlFor="Termino">
-                    Finalizado ou previsão de termino do curso
+                  <label htmlFor="conclusao">
+                    Finalizado ou previsão de conclusao do curso
                   </label>
                 </div>
               </fieldset>
@@ -274,8 +268,8 @@ const PerfilFormacao = () => {
                       id="Tema"
                       placeholder="Assunto do meu certificado"
                       size="30"
-                      name="certificado"
-                      {...register("certificado")}
+                      name="tema"
+                      {...register("tema")}
                     />
                     <label htmlFor="Tema">Titulo</label>
                   </div>
@@ -288,8 +282,8 @@ const PerfilFormacao = () => {
                       id="url"
                       placeholder="link do meu certificado"
                       size="30"
-                      name="url"
-                      {...register("url")}
+                      name="temaUrl"
+                      {...register("temaUrl")}
                     />
                     <label htmlFor="url">Link</label>
                   </div>
