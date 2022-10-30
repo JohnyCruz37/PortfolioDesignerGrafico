@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
-import {  } from "react-router-dom";
 
 //Componentes
 
@@ -30,14 +29,14 @@ const PerfilFormacao = () => {
     formState: { errors },
   } = useForm();
 
-  //Redirecionamento da página caso requisição feita com sucesso
-
-
   //API
-  const EnviarFormacao = (dados) =>
+  const EnviarFormacao = (dados) => {
     Api.post("/formacao", dados)
-      .then(() => console.log('Deu certo'))
+      .then(() => {
+        console.log("Deu certo");
+      })
       .catch(() => console.log("Deu errado"));
+  };
 
   return (
     <div className="perfil-formacao">
