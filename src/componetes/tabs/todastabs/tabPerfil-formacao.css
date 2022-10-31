@@ -14,6 +14,8 @@
     grid-template-columns: 40% 59%;
     grid-template-rows: 38% 38% 19%;
     grid-gap: 1% .3%;
+
+    position: relative;
 }
 
 .nivel-estudo,
@@ -89,6 +91,14 @@
 .btn-cancelar {
     margin-right: 5px;
 }
+
+.alerta{
+    position: absolute;
+    bottom: 0vw;
+    left: 0vh;
+}
+
+
 
 /* mobile */
 @media (max-width: 412px) {

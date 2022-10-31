@@ -7,6 +7,7 @@ import { ErrorMessage } from "@hookform/error-message";
 
 import DadosNivelEscolar from "./dadosNivelEscolar";
 import Titulo from "../atomo/titulo";
+import Notificacao from "../atomo/notificacao";
 
 //consumindo API
 import Api from "../servidor/api";
@@ -14,6 +15,7 @@ import Api from "../servidor/api";
 //CSS
 import "../componetes/tabs/todastabs/tabPerfil-formacao.css";
 import "../atomo/campo.css";
+import { BsHandThumbsUp, BsHandThumbsDownFill } from "react-icons/bs";
 
 const PerfilFormacao = () => {
   //ABRIR FORMULÁRIO//
@@ -31,17 +33,24 @@ const PerfilFormacao = () => {
 
   //API
   const EnviarFormacao = (dados) => {
+    const sucesso = document.getElementById("notificacao");
+    const falhou = document.getElementById("falhou");
+
     Api.post("/formacao", dados)
       .then(() => {
-        console.log("Deu certo");
+        const mostrar = new bootstrap.Toast(sucesso);
+
+        mostrar.show();
       })
-      .catch(() => console.log("Deu errado"));
+      .catch(() => {
+        console.log("Deu errado");
+        const mostrar = new bootstrap.Toast(falhou);
+        mostrar.show();
+      });
   };
 
   return (
     <div className="perfil-formacao">
-      {/* botão para abrir o formulario que adiciona uma nova formação */}
-
       {/* condicional que abre ou oculta o formulario */}
       {formulario ? (
         <>
@@ -293,11 +302,39 @@ const PerfilFormacao = () => {
             {/* enviar as informações do formulário */}
             <div className="btn-formacao mb-3">
               <button
+                name="salvar"
+                id="Salvar"
                 type="submit"
                 className="btn btn-outline-dark btn-lg shadow"
               >
                 Salvar
               </button>
+              <button
+                type="button"
+                className="btn btn-secondary sair-salvar"
+                onClick={ocultarFormulario}
+              >
+                Sair
+              </button>
+            </div>
+
+            {/* ALERTA DE CADASTRO */}
+            <div className="alerta">
+              {/* sucesso */}
+              <Notificacao
+                id="notificacao"
+                msg="Formação cadastrada com sucesso! Parabéns por essa conquista."
+                titulo="Notificação"
+                icone={<BsHandThumbsUp className="icone-alerta" />}
+              />
+
+              {/* falhou */}
+              <Notificacao
+                id="falhou"
+                msg="Algo deu errado! Tivemos algum problema com nosso banco de dados. ATUALIZE A PÁGINA e tente novamente."
+                titulo="Notificação"
+                icone={<BsHandThumbsUp className="icone-alerta" />}
+              />
             </div>
           </form>
         </>
