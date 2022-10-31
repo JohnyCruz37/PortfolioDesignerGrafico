@@ -4,7 +4,7 @@ import "./dadosNivelEscolar.css";
 
 const FormacaoDesabilitado = (props) => {
   return (
-    <div className="Formacao-dados">
+    <div className="Formacao-dados" >
       <div className="dados-status">
         <div className="campo-situacao">
           <CampoDesabilitado
@@ -17,6 +17,7 @@ const FormacaoDesabilitado = (props) => {
         <div className="botoes">
           <div className="botoes-btn-editar">
             <button
+              key={props.key}
               type="button"
               className="btn btn-secondary btn-editar"
               onClick={props.funcao}

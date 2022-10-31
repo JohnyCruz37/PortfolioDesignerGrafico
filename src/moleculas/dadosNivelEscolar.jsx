@@ -15,8 +15,10 @@ import "./dadosNivelEscolar.css";
 const DadosNivelEscolar = () => {
   //Habilitar e desabilitar edição
   const [editar, setEditar] = useState(false);
-  const Editar = () => setEditar(true)
-  const cancelar = () => setEditar(false)
+
+  const Editar = () => setEditar(true);
+  const cancelar = () => setEditar(false);
+
 
   //Pegando dados de Formação da API
   const [dadosFormacao, setDadosFormacao] = useState([]);
@@ -36,12 +38,12 @@ const DadosNivelEscolar = () => {
 
   return (
     <div>
-      {dadosFormacao &&
-        dadosFormacao.map((dado) => (
-          <article className="Formacao" key={dado._id}>
+      {dadosFormacao.map((dado, id) => (
+          <article className="Formacao" key={id._id}>
             {editar ? (
               <>
                 <FormacaoHabilitado
+                  key={dado._id}
                   funcao = {cancelar}
                   situacao={dado.situacao}
                   nivel={dado.nivel}
@@ -56,6 +58,7 @@ const DadosNivelEscolar = () => {
             ) : (
               <>
                 <FormacaoDesabilitado
+                  key={id._id}
                   funcao={Editar}
                   situacao={dado.situacao}
                   nivel={dado.nivel}
